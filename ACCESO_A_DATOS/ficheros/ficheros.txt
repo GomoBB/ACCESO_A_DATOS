@@ -1,0 +1,5 @@
+archivo1.txt
+archivo2.html
+archivo3.bin
+fichero_txt_plano.txt
+archivo4.exe

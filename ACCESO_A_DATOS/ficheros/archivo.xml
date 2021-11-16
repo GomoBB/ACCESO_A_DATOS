@@ -1,0 +1,36 @@
+<profesor>
+	<nombre>Luis</nombre>
+	<apellidos orden="1">Antúnez</apellidos>
+	<apellidos orden="2">Pérez</apellidos>
+	<numero_pie>42</numero_pie>
+	<imparte>
+		<modulo id="321">Acceso a Datos</modulo>
+		<modulo id="123">Programación de servicios y procesos</modulo>
+	</imparte>
+</profesor>
+<profesor>
+	<nombre>Belén</nombre>
+	<apellidos orden="1">Rodríguez</apellidos>
+	<apellidos orden="2">López</apellidos>
+	<numero_pie>41</numero_pie>
+	<imparte>
+		<modulo id="321">Acceso a Datos</modulo>
+	</imparte>
+</profesor>
+<profesor>
+	<nombre>Jack</nombre>
+	<apellidos orden="1">Smith</apellidos>
+	<numero_pie>42</numero_pie>
+	<imparte>
+		<modulo id="321">Acceso a Datos</modulo>
+		<modulo id="123">Programación de servicios y procesos</modulo>
+		<modulo id="555">Programación de dispositivos móviles</modulo>
+	</imparte>
+</profesor>
+<profesor>
+	<nombre>Ana</nombre>
+	<apellidos orden="1">Araujo</apellidos>
+	<apellidos orden="2">Vázquez</apellidos>
+	<numero_pie>38</numero_pie>>
+	<imparte/>
+</profesor>

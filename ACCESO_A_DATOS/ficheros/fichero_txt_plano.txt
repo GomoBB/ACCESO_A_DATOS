@@ -1,0 +1,3 @@
+Fichero de texto plano 
+	con contenido
+   algo 			irregular.

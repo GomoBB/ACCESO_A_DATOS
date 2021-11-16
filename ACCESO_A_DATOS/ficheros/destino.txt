@@ -1,0 +1,1 @@
+Este es el contenido del fichero de origen que ha de ser copiado en destino.txt.

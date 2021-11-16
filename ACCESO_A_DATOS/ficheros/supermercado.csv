@@ -1,0 +1,18 @@
+PR;2;Leche;1.50
+PR;3;Vino;3.00
+PR;5;Solomillo ternera;5.00
+PR;6;Caldo de pollo;1.15
+PR;8;Puerro;0.90
+PR;1;Queso;4.75
+CL;252;Pedro;Antúnez;Ramírez
+PE;105;252;3;30122020
+PE;105;252;5;30122020
+CL;253;María;Molinero;Pérez
+PE;104;253;2;16122020
+CL;251;Belén;Ordoñez;González
+PE;102;251;3;18082021
+CL;250;Antonio;Jurado;Oliver
+PE;103;251;3;02052021
+PE;101;250;1;18112021
+PE;105;252;8;30122020
+PE;104;253;6;16122020
