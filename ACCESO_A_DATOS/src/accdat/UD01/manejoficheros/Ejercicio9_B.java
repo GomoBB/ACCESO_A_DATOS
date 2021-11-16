@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package accdat.UD01.manejoficheros;
 import java.io.BufferedReader;
@@ -17,60 +17,60 @@ import accdat.UD01.manejoficheros.utilidades.Alumno;
 public class Ejercicio9_B {
 
 	public static final String FICHERO_ALUMNOS = "ficheros/alumnos.csv";
-	
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Alumno aluNuevo = new Alumno("Jesús", "Ródenas", "Jaque", 38);
-		Alumno aluRepe =  new Alumno("Luis", "Antúnez", "Pérez", 20);
-		
+		Alumno aluNuevo = new Alumno("Jesï¿½s", "Rï¿½denas", "Jaque", 38);
+		Alumno aluRepe =  new Alumno("Luis", "Antï¿½nez", "Pï¿½rez", 20);
+
 		try {
 			insertaAlumno(aluNuevo);
 			insertaAlumno(aluRepe);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}
 	}
-	
+
 	/**
-	 * Este método recorrerá todo el fichero hasta finalizar O encontrar un alumno
-	 * IDÉNTICO al pasado como parámetro. 
-	 * Si encuentra alumno, informa de la imposibilidad de inserción.
-	 * Si no encuentra alumno, lo inserta e informa de la inserción.
+	 * Este mï¿½todo recorrerï¿½ todo el fichero hasta finalizar O encontrar un alumno
+	 * IDï¿½NTICO al pasado como parï¿½metro.
+	 * Si encuentra alumno, informa de la imposibilidad de inserciï¿½n.
+	 * Si no encuentra alumno, lo inserta e informa de la inserciï¿½n.
 	 * @param alumno
 	 * @throws IOException
 	 */
 	public static void insertaAlumno(Alumno alumno) throws IOException {
 		try (FileReader flujoLectura = new FileReader(FICHERO_ALUMNOS);
 		BufferedReader filtroLectura = new BufferedReader(flujoLectura)){
-			
-			boolean encontrado = false; 
-			
+
+			boolean encontrado = false;
+
 			String linea = filtroLectura.readLine();
-			
+
 			while ((linea != null) && !encontrado ) {
 				Alumno aux = Alumno.procesaLinea(linea);
 				encontrado = aux.equals(alumno);
-				linea = filtroLectura.readLine();				
+				linea = filtroLectura.readLine();
 			}
-			
+
 			if (!encontrado) {
-				// Apertura del fichero en modo añadir. 
+				// Apertura del fichero en modo aï¿½adir.
 				// FileWriter(String fileName, boolean append)
 				PrintWriter pw = new PrintWriter(new FileWriter(FICHERO_ALUMNOS, true));
-				
-				// Inserción de salto de línea.
+
+				// Inserciï¿½n de salto de lï¿½nea.
 				pw.write("\n");
-				
-				// Escritura de la línea correspondiente al alumno en formato csv.				
+
+				// Escritura de la lï¿½nea correspondiente al alumno en formato csv.
 				pw.println(alumno.toString_csv());
-				
+
 				// cierre del flujo de salida.
 				pw.close();
-				System.out.println("Inserción realizada. Fichero actualizado.");
-			}else{				
+				System.out.println("Inserciï¿½n realizada. Fichero actualizado.");
+			}else{
 				System.out.println("No es posible insertar: El alumno ya existe en el fichero.");
 			}
 		}

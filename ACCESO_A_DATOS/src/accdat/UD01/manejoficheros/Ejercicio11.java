@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package accdat.UD01.manejoficheros;
 
@@ -35,12 +35,12 @@ public class Ejercicio11 {
 	}
 
 	/**
-	 * Este método leerá línea a líne el fichero CSV con los libros siguiendo la misma estructura usada hasta ahora
+	 * Este mï¿½todo leerï¿½ lï¿½nea a lï¿½ne el fichero CSV con los libros siguiendo la misma estructura usada hasta ahora
 	 * para la lectura de ficheros de caracteres.
-	 * 
-	 * Una vez tenga la instancia de objeto Libro, procederá a su serialización usando el flujoEscritura previamente preparado.
-	 * 
-	 * 
+	 *
+	 * Una vez tenga la instancia de objeto Libro, procederï¿½ a su serializaciï¿½n usando el flujoEscritura previamente preparado.
+	 *
+	 *
 	 */
 	public static void escribirFicheroSerializado() {
 		try (BufferedReader br = new BufferedReader(new FileReader(Cadenas.getUbicacion(FIC_LIBROS)))) {
@@ -50,7 +50,7 @@ public class Ejercicio11 {
 
 			String linea = br.readLine();
 			while (linea != null) {
-				// La línea tendrá esta estructura
+				// La lï¿½nea tendrï¿½ esta estructura
 				// 111-2-2222;Un mundo sin fin;Ken Follet;5
 				String[] datos = linea.split(";");
 
@@ -70,7 +70,7 @@ public class Ejercicio11 {
 	}
 
 	/**
-	 * Este método leerá el ficero .obj con las instancias serializadas, generará una instancia y llamará al método toString del objeto.
+	 * Este mï¿½todo leerï¿½ el ficero .obj con las instancias serializadas, generarï¿½ una instancia y llamarï¿½ al mï¿½todo toString del objeto.
 	 */
 	public static void leerFicheroSerializado() {
 		Libro libro = null;

@@ -11,9 +11,9 @@ import java.util.List;
 public class Pedido {
 	public String idPedido;
 	public List<Producto> productos;
-	
+
 	public Pedido(String idPedido) {
 		this.idPedido = idPedido;
-		this.productos = new ArrayList<Producto>();
+		this.productos = new ArrayList<>();
 	}
 }

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package accdat.UD01.manejoficheros;
 
@@ -15,10 +15,10 @@ import accdat.UD01.manejoficheros.utilidades.Cadenas;
 
 /**
  * Ejercicio 2.
- * 
- * Implementar una clase Java cuyo método main copie el contenido de un 
- * fichero “origen.txt” en un fichero “destino.txt”.
- * 
+ *
+ * Implementar una clase Java cuyo mï¿½todo main copie el contenido de un
+ * fichero ï¿½origen.txtï¿½ en un fichero ï¿½destino.txtï¿½.
+ *
  * @author JESUS
  *
  */
@@ -28,40 +28,40 @@ public class Ejercicio3 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String leido, ficOrigen, ficDestino = null;				
+		String leido, ficOrigen, ficDestino = null;
 		Scanner sc = null;
-		
+
 		// PrintWriter para el fichero de destino.
 		PrintWriter pw = null;
-		
-		// Variable que nos permitirá repetir la operación de solicitar nombre de origen mientras no se inserte uno válido.
+
+		// Variable que nos permitirï¿½ repetir la operaciï¿½n de solicitar nombre de origen mientras no se inserte uno vï¿½lido.
 		// Se inicializa a falso para entrar la primera vez en el programa.
 		boolean existe = false;
-		
+
 		while (!existe) {
 			System.out.println("Introduzca la ruta de origen: ");
-			
+
 			sc = new Scanner(System.in);
 			ficOrigen = sc.nextLine();
-			
+
 			try (BufferedReader br = new BufferedReader(new FileReader(Cadenas.getUbicacion(ficOrigen)))){
 				// Ha conseguido crear el flujo
 				existe = true;
-				
+
 				System.out.println("Introduzca la ruta de destino: ");
 				ficDestino = sc.nextLine();
-				
+
 				sc.close();
-				
+
 				pw = new PrintWriter (new FileWriter(Cadenas.getUbicacion(ficDestino)));
 				while((leido=br.readLine())!=null) {
 					pw.println(leido);
 				}
-						
+
 			} catch (FileNotFoundException e) {
 				// El fichero no existe.
 				existe = false;
-				System.out.println(" ************** El fichero no existe. Repita la operación ********************");
+				System.out.println(" ************** El fichero no existe. Repita la operaciï¿½n ********************");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -69,7 +69,7 @@ public class Ejercicio3 {
 				if (pw!=null) {
 					pw.close();
 				}
-				System.out.println("Operación finalizada. Archivo copiado en: " + Cadenas.getUbicacion(ficDestino));
+				System.out.println("Operaciï¿½n finalizada. Archivo copiado en: " + Cadenas.getUbicacion(ficDestino));
 			}
 		}
 	}

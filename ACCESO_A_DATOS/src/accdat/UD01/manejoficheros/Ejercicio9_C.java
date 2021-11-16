@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package accdat.UD01.manejoficheros;
 
@@ -20,7 +20,7 @@ public class Ejercicio9_C {
 
 	public static final String FICHERO_ALUMNOS = "ficheros/alumnos.csv";
 	public static final String FICHERO_SCRIPTS = "ficheros/script.sql";
-	
+
 	/**
 	 * @param args
 	 */
@@ -33,10 +33,10 @@ public class Ejercicio9_C {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-	 * Genera tantos insert como líneas de alumnos hay en el fichero.
-	 * 
+	 * Genera tantos insert como lï¿½neas de alumnos hay en el fichero.
+	 *
 	 * @param idAlumno Recibe la primera clave del script.
 	 * @throws FileNotFoundException
 	 * @throws IOException
@@ -45,21 +45,21 @@ public class Ejercicio9_C {
 		try (FileReader flujoLectura = new FileReader(FICHERO_ALUMNOS);
 		BufferedReader filtroLectura = new BufferedReader(flujoLectura)){
 			PrintWriter pw = new PrintWriter(new FileWriter(FICHERO_SCRIPTS));
-			
+
 			String linea = filtroLectura.readLine();
 			while (linea!=null) {
 				Alumno alumno = Alumno.procesaLinea(linea);
 				pw.println(alumno.toString_sql(idAlumno));
 				linea = filtroLectura.readLine();
-				
+
 				if(linea!=null)
 					idAlumno++;
 			}
 			pw.println("COMMIT;");
 			pw.write("/");
 			pw.close();
-			
-			System.out.println("Último índice insertado: " + idAlumno);
-		}		
+
+			System.out.println("ï¿½ltimo ï¿½ndice insertado: " + idAlumno);
+		}
 	}
 }

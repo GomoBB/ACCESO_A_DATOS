@@ -12,6 +12,6 @@ public class Producto {
 		super();
 		this.idProducto = idProducto;
 		this.nombreProducto = nombreProducto;
-		this.precioProducto = precioProducto;		
-	}	
+		this.precioProducto = precioProducto;
+	}
 }

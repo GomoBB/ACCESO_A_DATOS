@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package accdat.UD01.manejoficheros;
 
@@ -14,10 +14,10 @@ import accdat.UD01.manejoficheros.utilidades.Cadenas;
 
 /**
  * Ejercicio 2.
- * 
- * Implementar una clase Java cuyo método main copie el contenido de un 
- * fichero “origen.txt” en un fichero “destino.txt”.
- * 
+ *
+ * Implementar una clase Java cuyo mï¿½todo main copie el contenido de un
+ * fichero ï¿½origen.txtï¿½ en un fichero ï¿½destino.txtï¿½.
+ *
  * @author JESUS
  *
  */
@@ -25,22 +25,22 @@ public class Ejercicio2 {
 
 	private static final String FIC_ORIGEN = "origen.txt";
 	private static final String FIC_DESTINO = "destino.txt";
-	
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		PrintWriter pw = null;
 		String leido = null;
-		
+
 		// Apertura del flujo desde el fichero de origen
 		try (BufferedReader br = new BufferedReader(
 				new FileReader(Cadenas.getUbicacion(FIC_ORIGEN)))){
 			pw = new PrintWriter (new FileWriter(Cadenas.getUbicacion(FIC_DESTINO)));
-			
-			// En una única línea.
-			// - Actualizo el valor de la variable leído con una nueva línea.
-			// - Controlo que ese contenido no sea nulo, ya que esa es la condición para salir del bucle.
+
+			// En una ï¿½nica lï¿½nea.
+			// - Actualizo el valor de la variable leï¿½do con una nueva lï¿½nea.
+			// - Controlo que ese contenido no sea nulo, ya que esa es la condiciï¿½n para salir del bucle.
 			while((leido=br.readLine())!=null) {
 				pw.println(leido);
 			}
@@ -52,8 +52,8 @@ public class Ejercicio2 {
 			e.printStackTrace();
 		}finally {
 			if(pw!=null) {
-				pw.close();				
-			}		
+				pw.close();
+			}
 			System.out.println("Fichero copiado en: " + Cadenas.getUbicacion(FIC_DESTINO));
 		}
 	}

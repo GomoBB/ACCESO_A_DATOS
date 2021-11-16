@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package accdat.UD01.manejoficheros.utilidades;
 
@@ -12,13 +12,13 @@ import java.io.Serializable;
  */
 public class Libro implements Serializable {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -8912577566218352429L;
 	private String isbn, titulo;
 	private int numEjemplares;
-	private Autor autor;	
-	
+	private Autor autor;
+
 	/**
 	 * @param isbn
 	 * @param titulo
@@ -32,7 +32,7 @@ public class Libro implements Serializable {
 		this.numEjemplares = numEjemplares;
 		this.autor = autor;
 	}
-	
+
 	/**
 	 * @return the isbn
 	 */
@@ -81,22 +81,22 @@ public class Libro implements Serializable {
 	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
-	
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		String mensaje = "Libro: \n";
-		mensaje       += " - Título: " + titulo + "\n";
+		mensaje       += " - Tï¿½tulo: " + titulo + "\n";
 		mensaje       += " - Autor: " + autor.nombre;
 		if (autor.apellidos!=null) {
 			mensaje   += " " + autor.apellidos[0] + autor.apellidos[1]+ "\n";
 		}else {
 			mensaje   += "\n";
 		}
-		mensaje       += " - Núm ejemplares: " + numEjemplares + "\n";
-		
+		mensaje       += " - Nï¿½m ejemplares: " + numEjemplares + "\n";
+
 		return mensaje;
 	}
-	
-	
+
+
 }

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package accdat.UD01.manejoficheros.utilidades;
 
@@ -10,7 +10,7 @@ package accdat.UD01.manejoficheros.utilidades;
 public class Alumno implements Comparable<Alumno>{
 	private String nombre, apellido1, apellido2;
 	private int edad;
-		
+
 	/** Constructor parametrizado.
 	 * @param nombre
 	 * @param apellido1
@@ -24,9 +24,9 @@ public class Alumno implements Comparable<Alumno>{
 		this.apellido2 = apellido2;
 		this.edad = edad;
 	}
-	
+
 	/***************** GETTERS Y SETTERS ********************/
-	
+
 	/**
 	 * @return the nombre
 	 */
@@ -75,82 +75,82 @@ public class Alumno implements Comparable<Alumno>{
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	
+
 	/************* FIN GETTERS Y SETTERS ********************/
 
-	/** 
-	 * Método estático que recibe una línea en formato csv y genera un objeto alumno.
-	 * @param linea línea de fichero csv de formato "apellido1;apellido2;nombre;edad" 
-	 * @return Objeto alumno con la información.
+	/**
+	 * Mï¿½todo estï¿½tico que recibe una lï¿½nea en formato csv y genera un objeto alumno.
+	 * @param linea lï¿½nea de fichero csv de formato "apellido1;apellido2;nombre;edad"
+	 * @return Objeto alumno con la informaciï¿½n.
 	 */
 	public static Alumno procesaLinea(String linea) {
 		String[] datos = linea.split(";");
 		Alumno alu = new Alumno(datos[2], datos[0], datos[1], Integer.valueOf(datos[3]));
 		return alu;
 	}
-	
+
 	@Override
 	/**
-	 * Implementación del comparable. 
-	 * 
-	 * Criterios de ordenación:
+	 * Implementaciï¿½n del comparable.
+	 *
+	 * Criterios de ordenaciï¿½n:
 	 * 1. apellido1
 	 * 2. apellido2
 	 * 3. nombre
 	 * 4. edad
-	 * 
+	 *
 	 */
 	public int compareTo(Alumno alu2) {
 		int compare = this.getApellido1().compareTo(alu2.getApellido1());
-		
+
 		if (compare==0) {
 			compare = this.getApellido2().compareTo(alu2.getApellido2());
 		}
-		
+
 		if (compare==0) {
 			compare = this.getNombre().compareTo(alu2.getNombre());
 		}
-		
+
 		if (compare==0) {
 			compare = this.getEdad() - alu2.getEdad();
 		}
 		return compare;
-	}	
-    
+	}
+
     @Override
     /**
-     * Implementamos el método equals de la clase Alumno
+     * Implementamos el mï¿½todo equals de la clase Alumno
      */
     public boolean equals(Object obj) {
     	Alumno aux = (Alumno) obj;
-    	
+
     	return (aux.nombre.equals(this.nombre) && aux.apellido1.equals(this.apellido1) && aux.apellido2.equals(this.apellido2) && (aux.edad==this.edad));
     }
-    
+
     @Override
     /**
-     * Implementación del método toString para la salida por pantalla del apartado a.
+     * Implementaciï¿½n del mï¿½todo toString para la salida por pantalla del apartado a.
      */
     public String toString() {
     	String salida = "Alumno {Apellidos: " + this.apellido1 + " " + this .apellido2;
     	salida += ", Nombre: " + this.nombre + ", Edad: " + this.edad;
-    	
+
     	return salida;
     }
-    
+
     /**
-     * Método que obtendrá la línea de fichero csv de un objeto alumno.
-     * 
-     * @return línea de fichero csv de formato "apellido1;apellido2;nombre"
+     * Mï¿½todo que obtendrï¿½ la lï¿½nea de fichero csv de un objeto alumno.
+     *
+     * @return lï¿½nea de fichero csv de formato "apellido1;apellido2;nombre"
      */
     public String toString_csv() {
     	return apellido1 + ";" + apellido2 + ";" + nombre + ";" + edad;
     }
-    
+
     public String toString_sql(int idAlumno) {
     	String insert = "INSERT INTO ALUMNOS ( ID_ALUMNO, APELLIDO1, APELLIDO2, NOMBRE, EDAD) ";
     	insert       += "VALUES ( " + idAlumno + ", '" + apellido1 + "', '" + apellido2 + "', '" + nombre + "', " + edad + ");";
-    	
+
     	return insert;
     }
 }

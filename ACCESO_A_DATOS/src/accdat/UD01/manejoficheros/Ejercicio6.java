@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package accdat.UD01.manejoficheros;
 
@@ -17,40 +17,40 @@ public class Ejercicio6 {
 
 	/**
 	 * Ejercicio 6:
-	 * Implementar clase java que solicita al usuario número de ficheros a crear y los nombres de los mismos. 
-	 * A continuación creará los ficheros indicados.
+	 * Implementar clase java que solicita al usuario nï¿½mero de ficheros a crear y los nombres de los mismos.
+	 * A continuaciï¿½n crearï¿½ los ficheros indicados.
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		String mensaje = "";
-		
-		System.out.println("¿Cuántos ficheros quiere crear?");
-		
-		// Variable para almacenar el número de ficheros.
+
+		System.out.println("ï¿½Cuï¿½ntos ficheros quiere crear?");
+
+		// Variable para almacenar el nï¿½mero de ficheros.
 		int numFile = sc.nextInt();
-		
+
 		for (int i=1; i<=numFile; i++) {
 			// Variable para almacenar el nombre del fichero.
 			String nomFile = "";
-			
-			// Se crea el objeto de tipo File, abstracción que Java hace de un archivo/directorio.
-			System.out.println("Introduzca el nombre del " + i + "º fichero:");
+
+			// Se crea el objeto de tipo File, abstracciï¿½n que Java hace de un archivo/directorio.
+			System.out.println("Introduzca el nombre del " + i + "ï¿½ fichero:");
 			nomFile = sc.next();
 			File f = new File(Cadenas.getUbicacion(nomFile));
-			
+
 			try {
-				// Si el fichero es creado con éxito, el mensaje será satisfactorio. 
-				// En caso contrario el mensaje informará acerca del error.
-				mensaje = f.createNewFile()?"El archivo ha sido creado con éxito.":"El archivo no ha podido ser creado.";
+				// Si el fichero es creado con ï¿½xito, el mensaje serï¿½ satisfactorio.
+				// En caso contrario el mensaje informarï¿½ acerca del error.
+				mensaje = f.createNewFile()?"El archivo ha sido creado con ï¿½xito.":"El archivo no ha podido ser creado.";
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}finally {
 				System.out.println(mensaje);
 			}
-			
+
 		}
 		sc.close();
 	}
